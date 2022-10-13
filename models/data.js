@@ -12,9 +12,11 @@ const dataSchema = mongoose.Schema({
     characters: [ {
         name: String,
         id: Number,
-        issue: Number,
         rarity: String,
-        description: String
+        description: String,
+        issues: [{
+            issue: Number,
+            }]
         }],
 })
 
