@@ -1,18 +1,1 @@
-[
-    {
-        "name": "Natalie Cancer",
-        "description": "The one and only natalie with cancer",
-        "rarity": "Common",
-        "id": 1,
-        "issue": 14,
-        "thumbnail": "https://cdn.discordapp.com/attachments/918659190925426739/1029663061629476904/1027431864190910585.webp"
-    },
-    {
-        "name": "Korean Alan",
-        "description": "Alan the koreaboo",
-        "rarity": "Common",
-        "id": 2,
-        "issue": 10,
-        "thumbnail": "https://cdn.discordapp.com/attachments/918659190925426739/1029664700646031381/768329159369555979.webp"
-    }
-]
+[{"name":"Natalie Cancer","description":"The one and only natalie with cancer","rarity":"Common","id":1,"issue":19,"thumbnail":"https://cdn.discordapp.com/attachments/918659190925426739/1029663061629476904/1027431864190910585.webp"},{"name":"Korean Alan","description":"Alan the koreaboo","rarity":"Common","id":2,"issue":16,"thumbnail":"https://cdn.discordapp.com/attachments/918659190925426739/1029664700646031381/768329159369555979.webp"},{"name":"Kissy Philip","description":"this guy wants to give u a kiss","rarity":"Common","id":3,"issue":6,"thumbnail":"https://cdn.discordapp.com/attachments/918659190925426739/1030554527105036328/100DA413-E4BD-4199-ADAD-0C750C727078.jpg"},{"name":"poverty tock","description":"this guy looks like hes homeless","rarity":"Common","id":4,"issue":2,"thumbnail":"https://cdn.discordapp.com/emojis/1027320770902368286.webp?size=240&quality=lossless"}]
