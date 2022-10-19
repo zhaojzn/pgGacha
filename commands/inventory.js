@@ -41,7 +41,22 @@ module.exports.run = async (client, message, args) => {
                 message.channel.send({embeds: [embed]})
             }
         }else if(!isNaN(args[0])){
-            
+            for (let i = 0; i < data.characters.length; i++) {
+                if (data.characters[i].id == args[0]) {
+                    let invString = ``;
+                    for (let z = 0; z < data.characters[i].issues.length; z++) {
+                        invString += `\`${data.characters[i].name} (issue #: ${data.characters[i].issues[z].issue})\` \n`
+                    }
+                    let embed = new Discord.EmbedBuilder()
+                    .setColor('#D62828')
+                    .addFields(
+                        { name: '💫 Issues', value: invString, inline: true},
+                    )
+                    message.channel.send({embeds: [embed]})
+                    return;
+                }
+            }
+            return message.channel.send("You do not have this character")
         }
 
 

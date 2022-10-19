@@ -10,7 +10,7 @@ mongoose.connect(botconfig.mongoPass, {
 
 const path = require('path');
 
-const { common, characters } = require('../data/loadData.js');
+const { common, rare, characters } = require('../data/loadData.js');
 
 const Data = require("../models/data.js");
 module.exports.run = async (client, message, args) => {
@@ -26,7 +26,12 @@ module.exports.run = async (client, message, args) => {
             message.channel.send({embeds: [WarningEmbed]})
             return;
         }
-        let card = randomCard(common)
+        let result = randomChance();
+        let card;
+         switch(result) {
+            case 1: card = randomCard(common); break;
+            case 2: card = randomCard(rare); break;
+        } 
         card.issue++;
 
         for (let i = 0; i < data.characters.length; i++) {
@@ -35,7 +40,7 @@ module.exports.run = async (client, message, args) => {
 
 
                 let cardEmbed = new Discord.EmbedBuilder()
-                .setColor(embedColor("common"))
+                .setColor(embedColor(card.rarity))
                 .setTitle(`${card.name} (#${card.issue})`) // {c_characters[0].name JSON.stringify(randomCard(c_characters).name) 
                 .setDescription(`*${card.description}*`)
                 .addFields(
@@ -63,7 +68,7 @@ module.exports.run = async (client, message, args) => {
             if(err) console.log(err);
         })
         let cardEmbed = new Discord.EmbedBuilder()
-        .setColor(embedColor("common"))
+        .setColor(embedColor(card.rarity))
         .setTitle(`${card.name} (#${card.issue})`) // {c_characters[0].name JSON.stringify(randomCard(c_characters).name) 
         .setDescription(`*${card.description}*`)
         .addFields(
@@ -96,6 +101,16 @@ function embedColor(string){
     if(string.toLowerCase() == "legendary"){
         return "#c9a820"
     }
+}
+
+function randomChance(){
+    let chance = Math.random() * 100;
+    if(chance > 80){
+        return 2;
+    }else{
+        return 1;
+    }
+
 }
 
 module.exports.help = {
