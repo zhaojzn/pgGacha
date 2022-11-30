@@ -104,11 +104,22 @@ function embedColor(string){
 }
 
 function randomChance(){
+    // 1 = common
+    // 2 = rare
+    // 3 = epic
+    // 4 = legendary
+
     let chance = Math.random() * 100;
-    if(chance > 80){
+    if(chance > 95){
+        return 4;
+    }
+    if(chance > 85 && chance < 95){
+        return 3;
+    }
+    if(chance > 65 && chance < 85){ //20% chance rare
         return 2;
     }else{
-        return 1;
+        return 1; //65% common
     }
 
 }
